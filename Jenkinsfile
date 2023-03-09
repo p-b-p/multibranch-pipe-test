@@ -1,24 +1,37 @@
+properties([
+  parameters([
+    [
+      $class: 'ChoiceParameter',
+      choiceType: 'PT_SINGLE_SELECT',
+      name: 'Environment',
+      script: [
+        $class: 'ScriptlerScript',
+        scriptlerScriptId:'Environments.groovy'
+      ]
+    ],
+    [
+      $class: 'CascadeChoiceParameter',
+      choiceType: 'PT_SINGLE_SELECT',
+      name: 'Host',
+      referencedParameters: 'Environment',
+      script: [
+        $class: 'ScriptlerScript',
+        scriptlerScriptId:'HostsInEnv.groovy',
+        parameters: [
+          [name:'Environment', value: '$Environment']
+        ]
+      ]
+   ]
+ ])
+])
+
 pipeline {
   agent any
-  options {
-    buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
-  }
   stages {
-    stage('Hello') {
+    stage('Build') {
       steps {
-        sh '''
-          java -version
-        '''
-      }
-    }
-    stage('cat README') {
-      when {
-        branch "dev-*"
-      }
-      steps {
-        sh '''
-          cat README.md
-        '''
+        echo "${params.Environment}"
+        echo "${params.Host}"
       }
     }
   }
