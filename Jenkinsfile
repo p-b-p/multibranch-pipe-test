@@ -19,7 +19,10 @@ properties([
                     classpath: [],
                     sandbox: false,
                     script:
-                        'return[\'BBP\']'
+                    '''
+def keys = ["BBP", "BCT", "BRC"]
+return keys
+                    '''
                 ]
             ]
         ]
