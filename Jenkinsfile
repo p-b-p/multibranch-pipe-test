@@ -20,8 +20,8 @@ properties([
                     sandbox: false,
                     script:
                     '''
-def keys = ["BBP", "BCT", "BRC"]
-return keys
+def tags = ["BBP", "BCT", "BRC"]
+return tags.reverse(true)
                     '''
                 ]
             ]
