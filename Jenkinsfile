@@ -6,7 +6,6 @@ properties([
             filterLength: 1,
             filterable: false,
             name: 'PROJECT_KEY',
-            randomName: 'choice-parameter-8859074418529501',
             script: [
                 $class: 'GroovyScript',
                 fallbackScript: [
@@ -19,7 +18,7 @@ properties([
                     classpath: [],
                     sandbox: false,
                     script:
-                        'return[\'BBP\', \'BCT\']'
+                        """println("PBP")"""
                 ]
             ]
         ]
