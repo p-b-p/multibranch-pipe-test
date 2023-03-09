@@ -19,7 +19,11 @@ properties([
                     classpath: [],
                     sandbox: false,
                     script:
-                        'return[\'BBP\']'
+                    '''
+import jenkins.model.*
+def tags = ["BBP" , "BPC"]
+return tags.reverse(true)
+                    '''
                 ]
             ]
         ]
