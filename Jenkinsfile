@@ -1,3 +1,31 @@
+properties([
+    parameters([
+        [$class: 'ChoiceParameter',
+            choiceType: 'PT_SINGLE_SELECT',
+            description: 'Bitbucket project key',
+            filterLength: 1,
+            filterable: false,
+            name: 'PROJECT_KEY',
+            randomName: 'choice-parameter-8859074418529501',
+            script: [
+                $class: 'GroovyScript',
+                fallbackScript: [
+                    classpath: [],
+                    sandbox: false,
+                    script:
+                        'return[\'Error\']'
+                ],
+                script: [
+                    classpath: [],
+                    sandbox: false,
+                    script:
+                        'return[\'BBP\']'
+                ]
+            ]
+        ]
+    ])
+])
+
 pipeline {
   agent any
   options {
