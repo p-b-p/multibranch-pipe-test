@@ -13,13 +13,13 @@ properties([
                     classpath: [],
                     sandbox: false,
                     script:
-                        'return[\'Error\']'
+                        'return[\'ups\']'
                 ],
                 script: [
                     classpath: [],
                     sandbox: false,
                     script:
-                        'return[\'BBP\']'
+                        'return[\'BBP\', \'BCT\']'
                 ]
             ]
         ]
