@@ -20,8 +20,8 @@ properties([
                     sandbox: false,
                     script:
                     '''
-def tags = ["BBP", "BCT", "BRC"]
-return tags.reverse(true)
+def a = ['BBP', 'BCT', 'BRC']
+return a.reverse(true)
                     '''
                 ]
             ]
