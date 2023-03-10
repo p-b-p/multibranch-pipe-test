@@ -6,20 +6,20 @@ properties([
             filterLength: 1,
             filterable: false,
             name: 'PROJECT_KEY',
-            randomName: 'choice-parameter-9201828821492330',
+            randomName: 'choice-parameter-7108218389296307',
             script: [
                 $class: 'GroovyScript',
                 fallbackScript: [
                     classpath: [],
                     sandbox: false,
                     script:
-                        'return[\'upsw\']'
+"""return[\'ups\']"""
                 ],
                 script: [
                     classpath: [],
                     sandbox: false,
                     script:
-"""def a = ['BBP', 'bct', 'BrC']
+"""def a = ['BbP', 'BcT', 'BrC']
 return a.reverse(true)"""
                 ]
             ]
