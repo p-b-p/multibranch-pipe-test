@@ -19,7 +19,7 @@ properties([
                     classpath: [],
                     sandbox: false,
                     script:
-"""def a = ["Bb"', "BcT", "BrC"]
+"""def a = ["BbB", "BcT", "BrC"]
 return a.reverse(true)"""
                 ]
             ]
