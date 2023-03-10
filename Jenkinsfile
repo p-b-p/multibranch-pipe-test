@@ -33,12 +33,7 @@ pipeline {
     buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
   }
   stages {
-    stage('Hello') {
-      steps {
-        sh '''
-          java -version
-        '''
-      }
+    stage('Test') {
       steps {
         script {
           def jstring = '{"one":1, "two":2}'
