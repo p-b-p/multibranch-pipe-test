@@ -45,6 +45,7 @@ pipeline {
           def jobj = readJSON text: jstring
           echo jobj.toString()
         }
+      }
     }
   }
 }
