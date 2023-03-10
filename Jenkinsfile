@@ -1,3 +1,32 @@
+properties([
+    parameters([
+        [$class: 'ChoiceParameter',
+            choiceType: 'PT_SINGLE_SELECT',
+            description: 'Bitbucket project key',
+            filterLength: 1,
+            filterable: false,
+            name: 'PROJECT_KEY',
+            randomName: 'choice-parameter-9201828821492330',
+            script: [
+                $class: 'GroovyScript',
+                fallbackScript: [
+                    classpath: [],
+                    sandbox: false,
+                    script:
+                        'return[\'upsw\']'
+                ],
+                script: [
+                    classpath: [],
+                    sandbox: false,
+                    script:
+"""def a = ['BBP', 'bct', 'BrC']
+return a.reverse(true)"""
+                ]
+            ]
+        ]
+    ])
+])
+
 pipeline {
   agent any
   options {
