@@ -13,13 +13,13 @@ properties([
                     classpath: [],
                     sandbox: false,
                     script:
-                        'return[\'ups\']'
+                        'return[\'err\']'
                 ],
                 script: [
                     classpath: [],
                     sandbox: false,
                     script:
-"""def a = ['BBP', 'BCT', 'MMT', 'PBP']
+"""def a = ['BBP', 'BCT', 'PBP']
 return a.reverse(true)"""
                 ]
             ]
@@ -37,6 +37,9 @@ pipeline {
       steps {
         sh '''
           java -version
+          def jstring = '{"one":1, "two":2}'
+          def jobj = readJSON text: jstring
+          echo jobj.toString()
         '''
       }
     }
