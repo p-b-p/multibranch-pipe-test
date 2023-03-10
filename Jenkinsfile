@@ -13,13 +13,13 @@ properties([
                     classpath: [],
                     sandbox: false,
                     script:
-"""return[\'ups\']"""
+                        'return[\'ups\']'
                 ],
                 script: [
                     classpath: [],
                     sandbox: false,
                     script:
-"""def a = ["bbp", "bct", "brc"]
+"""def a = ['BBP', 'BCT', 'BRC']
 return a.reverse(true)"""
                 ]
             ]
